@@ -8,6 +8,7 @@
 #'   against the withheld 0.2 proportion.
 #' @param n.trees Number of trees to use. If \code{n.trees = NA} then the
 #'   function will conduct cross-validation to calculate the optimum number.
+#' @param n.core Number of cores to use for parallel processing.
 #' @param shrinkage a shrinkage parameter applied to each tree in the expansion.
 #'   Also known as the learning rate or step-size reduction; 0.001 to 0.1
 #'   usually work, but a smaller learning rate typically requires more trees.
@@ -47,6 +48,7 @@ testMod <- function(input_data,
                     bag.fraction = 0.5,
                     n.minobsinnode = 10,
                     cv.folds = 5,
+                    n.core = NULL,
                     seed = 123,
                     plot = TRUE) {
   ## silence R check
@@ -95,6 +97,7 @@ testMod <- function(input_data,
         bag.fraction = bag.fraction,
         n.minobsinnode = n.minobsinnode,
         cv.folds = cv.folds,
+        n.cores = n.core,
         verbose = FALSE
       )  
     
@@ -113,6 +116,7 @@ testMod <- function(input_data,
         bag.fraction = bag.fraction,
         n.minobsinnode = n.minobsinnode,
         cv.folds = cv.folds,
+        n.cores = n.core,
         verbose = FALSE
       ) 
   }

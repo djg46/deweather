@@ -15,6 +15,7 @@ testMod(
   bag.fraction = 0.5,
   n.minobsinnode = 10,
   cv.folds = 5,
+  n.core = NULL,
   seed = 123,
   plot = TRUE
 )
@@ -56,6 +57,8 @@ observations, not the total weight.}
   = NA}. If \code{cv.folds > 1} then gbm, in addition to the usual fit, will
 perform a cross-validation, calculate an estimate of generalization error
 returned in \code{cv.error}.}
+
+\item{n.core}{Number of cores to use for parallel processing.}
 
 \item{seed}{Random number seed for reproducibility in returned model.}
 
