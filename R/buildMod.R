@@ -106,6 +106,7 @@ buildMod <- function(input_data,
       bag.fraction = bag.fraction,
       n.minobsinnode = n.minobsinnode,
       cv.folds = cv.folds,
+      n.core = n.core,
       seed
     )
   }
@@ -183,6 +184,7 @@ runGbm <-
            bag.fraction = bag.fraction,
            n.minobsinnode = n.minobsinnode,
            cv.folds = cv.folds,
+           n.core = n.core,
            seed = seed) {
     ## sub-sample the data for bootstrapping
     if (simulate) {
@@ -208,6 +210,7 @@ runGbm <-
       train.fraction = 1,
       n.minobsinnode = n.minobsinnode,
       cv.folds = cv.folds,
+      n.cores = n.core,
       keep.data = TRUE,
       verbose = FALSE
     )
