@@ -150,8 +150,8 @@ testMod <- function(input_data,
     tidyr::pivot_longer(cols= -1) %>% 
     dplyr::rename(statistic = "name") %>% 
     dplyr::select(-1) %>% 
-    dplyr::mutate(value = round(value, 2)) %>% 
-    dplyr::filter(!statistic %in% c("P", "COE", "IOA"))
+    dplyr::mutate(value = round(value, 2)) 
+    #dplyr::filter(!statistic %in% c("P", "COE", "IOA"))
   
   # predictions based on test data
   
@@ -205,8 +205,8 @@ testMod <- function(input_data,
     tidyr::pivot_longer(cols= -1) %>% 
     dplyr::rename(statistic = "name") %>% 
     dplyr::select(-1) %>% 
-    dplyr::mutate(value = round(value, 2)) %>% 
-    dplyr::filter(!statistic %in% c("P", "COE", "IOA"))
+    dplyr::mutate(value = round(value, 2))  
+    #dplyr::filter(!statistic %in% c("P", "COE", "IOA"))
   
   stats_both <-
     dplyr::left_join(
