@@ -297,6 +297,7 @@ partialDep <-
           bag.fraction = bag.fraction,
           n.minobsinnode = n.minobsinnode,
           cv.folds = cv.folds,
+          seed,
           n.core = 1
         )
 
