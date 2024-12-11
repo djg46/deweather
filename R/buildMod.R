@@ -295,7 +295,8 @@ partialDep <-
           interaction.depth = interaction.depth,
           bag.fraction = bag.fraction,
           n.minobsinnode = n.minobsinnode,
-          cv.folds = cv.folds
+          cv.folds = cv.folds,
+          n.core = 1
         )
 
       parallel::stopCluster(cl)
