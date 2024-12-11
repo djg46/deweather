@@ -24,6 +24,7 @@ testMod <- function(input_data,
                     bag.fraction = 0.5,
                     n.minobsinnode = 10,
                     cv.folds = 5,
+                    n.core = 4,
                     seed = 123,
                     plot = TRUE) {
   ## silence R check
@@ -72,7 +73,8 @@ testMod <- function(input_data,
         bag.fraction = bag.fraction,
         n.minobsinnode = n.minobsinnode,
         cv.folds = cv.folds,
-        verbose = FALSE
+        verbose = FALSE,
+        n.cores = n.core
       )  
     
     # find index for n trees with minimum CV error
@@ -90,7 +92,8 @@ testMod <- function(input_data,
         bag.fraction = bag.fraction,
         n.minobsinnode = n.minobsinnode,
         cv.folds = cv.folds,
-        verbose = FALSE
+        verbose = FALSE,
+        n.cores = n.core
       ) 
   }
   
