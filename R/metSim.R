@@ -8,6 +8,8 @@
 #'   proxies such as "hour", "weekday" or "week".
 #' @param n.core Number of cores to use.
 #' @param B Number of simulations
+#' @param type One of the supported parallelisation types.
+#' See parallel::makeCluster()
 #' @export
 #' @return a [tibble][tibble::tibble-package]
 #' @seealso [buildMod()] to build a gbm model
@@ -17,7 +19,8 @@ metSim <-
            newdata,
            metVars = c("ws", "wd", "air_temp"),
            n.core = 4,
-           B = 200) {
+           B = 200,
+           type = "PSOCK") {
     check_dwmod(dw_model)
 
     ## extract the model
@@ -38,7 +41,7 @@ metSim <-
       newdata <- prepData(newdata)
     }
 
-    cl <- parallel::makeCluster(n.core)
+    cl <- parallel::makeCluster(n.core, type = type)
     doParallel::registerDoParallel(cl)
 
     prediction <- foreach::foreach(

@@ -9,7 +9,8 @@ metSim(
   newdata,
   metVars = c("ws", "wd", "air_temp"),
   n.core = 4,
-  B = 200
+  B = 200,
+  type = "PSOCK"
 )
 }
 \arguments{
@@ -25,6 +26,9 @@ proxies such as "hour", "weekday" or "week".}
 \item{n.core}{Number of cores to use.}
 
 \item{B}{Number of simulations}
+
+\item{type}{One of the supported parallelisation types.
+See parallel::makeCluster()}
 }
 \value{
 a \link[tibble:tibble-package]{tibble}
